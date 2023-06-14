@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pertemuan 3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11">
+                <h1>Universitas Muhammadiyah Sumatera Utara</h1> 
+                <p>
+                    Jl. Kapten Muchtar Basri No.3, Glugur Darat II, Kec. Medan Timur., Kota Medan, Sumatera Utara 20238 Indonesia. Phone: 061-6619056, 6622400 Ext. 106 & 108. <br>Fax: 061- 6625474. http://www.umsu.ac.id
+                </p> 
+            </div>   
+        <div class="col-sm-1" style="margin-left: -20px;">
+            <img src="../img/logoumsu.png" style="height: 100px;">
+        </div>    
+    </div>
+    <br>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Mahasiswa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nilai</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Matakuliah</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Angkatan
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">2022</a>
+                <a class="dropdown-item" href="#">2021</a>
+                <a class="dropdown-item" href="#">2020</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>DATA MAHASISWA</h4>
+            <table class="table">
+                <tr>
+                    <th>N0</th>
+                    <th>NPM</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>Nilai</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2009010007</td>
+                    <td>Rangga Mahara Miko</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2009010029</td>
+                    <td>Dian Damayanti</td>
+                    <td>95</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <h4>Tambah Data Mahasiswa</h4>
+            <div class="form-group">
+                <label>NPM</label>
+                <input type="text" class="form-control"
+                id="npm">
+                <p id="tampil_npm" style="font-weight: bold;"
+                class="text-danger"></p>
+            </div>
+            <div class="form-group">
+                <label>Nama Mahasiswa</label>
+                <input type="text" class="form-control"
+                id="Nama_Mahasiswa">
+                <p id="tampil_Nama_Mahasiswa" style="font-weight: bold;"
+                class="text-danger"></p>
+            </div> 
+            <div class="form-group">
+                <label>Nilai</label>
+                <input type="text" class="form-control"
+                id="Nilai">
+                <p id="tampil_Nilai" style="font-weight: bold;"
+                class="text-danger"></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button class="btn btn-danger">Batal</button>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group" style="text-align: right;">
+                    <button class="btn btn-info" 
+                    id="simpan">Simpan</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <!-- <script src="jquery.js"></script> -->
+    
+
+    <script>
+        // $("#npm").change(function(){
+        //     var npm = $(this).val()
+        //     console.log (npm)
+        // })
+        // $("#npm").keyup(function(){
+        //     var npm = $(this).val()
+        //     $("#tampil_npm").text(npm)
+        //     // console.log (npm)
+        // })
+
+        $("#simpan").click(function(){
+            var npm = $("#npm").val()
+            if (npm == "") {
+            //    console.log("NPM Masih Kosong!") 
+                    $("#tampil_npm").text("NPM Masih Kosong")
+            }else{
+                    $("#tampil_npm").text("")
+            }
+            var nama_mahasiswa = $("#nama_mahasiswa").val()
+            if (nama_mahasiswa == "") {
+            //    console.log("Nama Masih Kosong!") 
+                    $("#tampil_nama_mahasiswa").text("Nama Masih Kosong")
+            }else{
+                    $("#tampil_nama_mahasiswa").text("")
+            }
+            // else{
+            //     console.log("NPM Sudah Diinput!")
+            // }
+        })
+    </script>
+</body>
+</html>
